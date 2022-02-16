@@ -61,6 +61,7 @@ function insertVehiculo() {
                     alert('El registro ha sido guardado')
                     limpiarCampos();
                     getAllVehiculos();
+                    location.reload();
                 }
             })
     } else {
@@ -116,7 +117,7 @@ function getCategoria() {
 }
 
 function getMarca(CategoriaID) {
-    const urlCatalogo = 'api/catalogo?_tipoCat=MARCA&_categoriaID=' + CategoriaID;
+    const urlCatalogo = 'api/catalogo?_tipoCat=MARCA&_filtroID=' + CategoriaID;
 
     fetch(urlCatalogo)
         .then(resp => resp.json())
@@ -125,13 +126,16 @@ function getMarca(CategoriaID) {
             lkpMarca = document.getElementById('lkpMarca');
             deleteOptions(lkpMarca);
             lkpMarca.appendChild(optionBlank());
-            datos.forEach(element => {
-                myOption = document.createElement('option');
-                myOption.value = element.MarcaID;
-                myOption.text = element.MarcaDescripcion;
-                lkpMarca.appendChild(myOption);
-            });
+            if (CategoriaID > 0){
+                datos.forEach(element => {
+                    myOption = document.createElement('option');
+                    myOption.value = element.MarcaID;
+                    myOption.text = element.MarcaDescripcion;
+                    lkpMarca.appendChild(myOption);
+                });                
+            }
             getModelo(lkpMarca.value);
+          
         })
         .catch(function (error) {
             console.log(error);
@@ -139,7 +143,7 @@ function getMarca(CategoriaID) {
 }
 
 function getModelo(MarcaID) {
-    const urlCatalogo = 'api/catalogo?_tipoCat=MODELO&_marcaID=' + MarcaID;
+    const urlCatalogo = 'api/catalogo?_tipoCat=MODELO&_filtroID=' + MarcaID;
 
     fetch(urlCatalogo)
         .then(resp => resp.json())
@@ -148,12 +152,14 @@ function getModelo(MarcaID) {
             lkpModelo = document.getElementById('lkpModelo');
             deleteOptions(lkpModelo);
             lkpModelo.appendChild(optionBlank());
-            datos.forEach(element => {
-                myOption = document.createElement('option');
-                myOption.value = element.ModeloID;
-                myOption.text = element.ModeloDescripcion;
-                lkpModelo.appendChild(myOption);
-            });
+            if (MarcaID > 0){
+                datos.forEach(element => {
+                    myOption = document.createElement('option');
+                    myOption.value = element.ModeloID;
+                    myOption.text = element.ModeloDescripcion;
+                    lkpModelo.appendChild(myOption);
+                });
+            }           
         })
         .catch(function (error) {
             console.log(error);

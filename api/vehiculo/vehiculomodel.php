@@ -2,7 +2,46 @@
 
 include '../../config.php';
 
-class vehiculo{  
+//Si se necesitaran comportamientos distintos para el objeto
+interface IAuto{
+    public function select();
+    public function insert();
+    public function getRuedas();
+    public function getPotencia();
+}
+
+class moto implements IAuto{
+    function select(){
+
+    }
+    function insert(){
+
+    }
+    function getRuedas(){
+        return 2;
+    }
+    function getPotencia(){
+        return 100;
+    }
+}
+
+class sedan implements IAuto{
+    function select(){
+
+    }
+    function insert(){
+
+    }
+    function getRuedas(){
+        return 4;
+    }
+    function getPotencia(){
+        return 300;
+    }  
+}
+
+//En este caso ambos comparten características.
+class vehiculo{
     
     function select(){
         $pdo = new Conexion();
