@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>SysAuto. Control de su Vehiculo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 </head>
-<body>
 
+<body>
+    <section id="header" class="mb-5">
+        <div class="encabezado bg-dark">
+            <div class="container" style="height: 100%;">
+                <div class="col-12 text-center fs-3 align-middle" style="height: 100%;">
+                    <div class="pt-4">Inventario de Vehiculos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="txtUsuario" class="form-label fs-5">Nombre de Usuario:</label><br />
+                            <input type="text" id="txtUsuario" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="txtPassword" class="form-label fs-5">Password:</label><br />
+                            <input type="password" id="txtPassword" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-4 justify-content-end">
+                            <button type="submit" class="btn btn-success mt-2 w-100" onclick="login()">Entrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    <script type="application/javascript" src="js/login.js"></script>
 </body>
+
 </html>

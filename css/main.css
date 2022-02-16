@@ -1,0 +1,27 @@
+body{
+    font-size: 12px;
+}
+
+.loginCenter {
+    margin: auto;
+    width: 25%;
+    border: 3px solid steelblue;
+    padding: 10px;
+}
+
+.encabezado{
+    height: 100px;
+    color: #ffffff;
+    font-size: 2em;
+}
+
+#Footer{
+    background: black;
+    height: 70px;
+    border-top: 2px solid rgba(0, 0, 0, 0.24);  
+    /*  poner footer abajo */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
