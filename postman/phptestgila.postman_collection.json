@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "34b907d9-1af5-4431-885e-b95f680246a5",
+		"name": "SySAuto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Vehiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{urlapi}}/api/vehiculo/",
+					"host": [
+						"{{urlapi}}"
+					],
+					"path": [
+						"api",
+						"vehiculo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Vehiculo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlapi}}/api/vehiculo/",
+					"host": [
+						"{{urlapi}}"
+					],
+					"path": [
+						"api",
+						"vehiculo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Catalogos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlapi}}/api/catalogo/?_tipoCat=CATEGORIA&_filtroID=0",
+					"host": [
+						"{{urlapi}}"
+					],
+					"path": [
+						"api",
+						"catalogo",
+						""
+					],
+					"query": [
+						{
+							"key": "_tipoCat",
+							"value": "CATEGORIA",
+							"description": "CATEGORIA, MARCA, MODELO"
+						},
+						{
+							"key": "_filtroID",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlapi}}/api/login/?usuario=super&password=super",
+					"host": [
+						"{{urlapi}}"
+					],
+					"path": [
+						"api",
+						"login",
+						""
+					],
+					"query": [
+						{
+							"key": "usuario",
+							"value": "super"
+						},
+						{
+							"key": "password",
+							"value": "super"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
